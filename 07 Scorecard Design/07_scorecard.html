@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>40.014 ESA Project</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+
+<body>
+<div id="container">
+<div class="navbar">
+	<div class="logo"><img class="logo-img" src="../assets/logo.png"/></div>
+	<a class="nav-item" href="../index.html"><div class="nav-item-block">Cover Page</div></a>
+	<a class="nav-item" href="../02 Mission Statement/02_mission_statement.html"><div class="nav-item-block">Mission Statement</div></a>
+	<a class="nav-item" href="../03 User Characteristics/03_user_characteristics.html"><div class="nav-item-block">User Characteristics</div></a>
+	<a class="nav-item" href="../04 Situation Maps/04_influence_diagrams.html"><div class="nav-item-block">Situation Maps</div></a>
+	<a class="nav-item" href="../05 Design Alternatives/05_design_alternatives.html"><div class="nav-item-block">Design Alternatives</div></a>
+	<a class="nav-item" href="../06 Integrated Concepts/06_integrated_concepts.html"><div class="nav-item-block">Integrated Concepts</div></a>
+	<a class="nav-item" href="../07 Scorecard Design/07_scorecard.html"><div class="nav-item-block selected"><div class="nav-selected"></div>Scorecard</div></a>
+	<a class="nav-item" href="../08 Concept Selection/08_concept_selection.html"><div class="nav-item-block">Concept Selection</div></a>
+	<a class="nav-item" href="../09 Operational Concept/09_operational_concept.html"><div class="nav-item-block">Operational Concept</div></a>
+	<a class="nav-item" href="../10 Use Cases and Scenarios/10_use_cases_and_scenarios.html"><div class="nav-item-block">Use Cases and Scenarios</div></a>
+	<a class="nav-item" href="../11 Scenario Analysis/11_scenario_analysis.html"><div class="nav-item-block">Scenario Analysis</div></a>
+	<a class="nav-item" href="../12 Chunked Design/12_chunked_design.html"><div class="nav-item-block">Chunked Design</div></a>
+	<a class="nav-item" href="../13 Logical Architecture/13_logical_architecture.html"><div class="nav-item-block">Logical Architecture</div></a>
+	<a class="nav-item" href="../14 Product Family and Release Schedule/14_product_family_and_release_schedule.html"><div class="nav-item-block">Product Family</div></a>
+	<a class="nav-item" href="../15 Modal Analysis/15_modal_analysis.html"><div class="nav-item-block">Modal Analysis</div></a>
+	<a class="nav-item" href="../16 Prototyping Canvas/16_rapid_prototyping.html"><div class="nav-item-block">Prototyping Canvas</div></a>
+	<a class="nav-item" href="../17 Capella Model/output/index.html"><div class="nav-item-block">Capella Model</div></a>
+	<div class="nav-footer"><p>Refer to the ESA Course Syllabus 2020 for detailed requirements.</p></div>
+</div>
+<div class="body">
+	
+	<h1> Scorecard </h1>
+	<div class="description"><p><a href="#functional_requirements">Functional requirements</a> and <a href="#qualtiy_attributes">quality attributes</a>, with weights, that the user will use to score alternative solutions. This is input to the Concept Selection step (next).
+</p></div>
+
+	<p>Our team debated between a physical game and a computer game. We decided to pursue the physical game route because it would be more engaging for the players to play the game with their friends in person than playing online alone. Furthermore, the computer software game would be much more timely to build and prototype, which delays our go to market plans. 
+<br><br>
+When designing our physical game, we came up with a list of functional requirements and quality attributes that we wanted our game to fulfill. Primarily, we wanted our game to focus on delivering our mission, so the higher weighted attributes both are relevant to option seeking and decision making. Other game elements, such as rules and feedback, are necessary but not as important to the mission so they are given lower weights. Below are the two scorecard designs: 
+</p>
+	<h2 id="functional_requirements" >Functional Requirements</h2>
+	<table class="fullwidth">
+	  <tr class="tableheader">
+	    <th>Functional Requirements</th>
+	    <th>Relative Weight <br>(Sum up to 100%) </th>
+	  </tr>
+	  <tr>
+	    <td>Players are able to look for possible options</td>
+	    <td>10.00%</td>
+	  </tr>
+	  <tr>
+	    <td>Players are able to think about the possibilities you open up for other players for each option</td>
+	    <td>8.00%</td>
+	  </tr>
+	  <tr>
+	    <td>Players are able to consider about the long term impact of their immediate action</td>
+	    <td>8.00%</td>
+	  </tr>
+	  <tr>
+	    <td>Players are able to evaluate and weigh the opportunity cost of decisions</td>
+	    <td>8.00%</td>
+	  </tr>
+	  <tr>
+	    <td>Players are able to interact with other players (if any) via a system</td>
+	    <td>6.00%</td>
+	  </tr>
+	  <tr>
+	    <td>System provides reliable scoring criteria for each player’s moves</td>
+	    <td>4.00%</td>
+	  </tr>
+	  <tr>
+	    <td>System provides relevant and applicable outcomes following player’s moves</td>
+	    <td>4.00%</td>
+	  </tr>
+	  <tr>
+	    <td>System provides an initial state</td>
+	    <td>10.00%</td>
+	  </tr>
+	  <tr>
+	    <td>System provides rules for what players are capable of doing in a given scenario</td>
+	    <td>8.00%</td>
+	  </tr>
+	  <tr>
+	    <td>System dictates game style and sequencing style</td>
+	    <td>8.00%</td>
+	  </tr>
+	  <tr>
+	    <td>System provides method of handling disorder and cheating</td>
+	    <td>0.00%</td>
+	  </tr>
+	  <tr>
+	    <td>Players are able to receive immediate feedback on their chosen move</td>
+	    <td>4.00%</td>
+	  </tr>
+	  <tr>
+	    <td>Players are able to see growth in ability to manage disruptive and unexpected events</td>
+	    <td>8.00%</td>
+	  </tr>
+	  <tr>
+	    <td>Players are able to grow their ability to project multiple future outcomes</td>
+	    <td>6.00%</td>
+	  </tr>
+	  <tr>
+	    <td>System is effective in teaching agile thinking skills</td>
+	    <td>8.00%</td>
+	  </tr>
+	</table>
+<div class="space"></div>
+	<h2 id="qualtiy_attributes" >Quality Attributes</h2>
+	<table class="fullwidth">
+	  <tr class="tableheader">
+	  	<th>Quality Attributes</th>
+	    <th>Relative Weight <br>(Sum up to 100%) </th>
+	  </tr>
+	  <tr>
+	    <td>Learnability (how long it takes to learn how to play)</td>
+	    <td>7.50%</td>
+	  </tr>
+	  <tr>
+	    <td>Replay value (over time how much do you enjoy it)</td>
+	    <td>10.00%</td>
+	  </tr>
+	  <tr>
+	    <td>Randomness (how much is out of your hand)</td>
+	    <td>5.00%</td>
+	  </tr>
+	  <tr>
+	    <td>Skill requirement (strategy, resource management, collaboration, teamwork)</td>
+	    <td>10.00%</td>
+	  </tr>
+	  <tr>
+	    <td>Attentiveness throughout entire game</td>
+	    <td>10.00%</td>
+	  </tr>
+	  <tr>
+	    <td>Degree of interaction between players</td>
+	    <td>15.00%</td>
+	  </tr>
+	  <tr>
+	    <td>Game variation (how different are each new game played)</td>
+	    <td>5.00%</td>
+	  </tr>
+	  <tr>
+	    <td>Set up effort</td>
+	    <td>2.50%</td>
+	  </tr>
+	  <tr>
+	    <td>New player awareness (how does it react to players with different levels)</td>
+	    <td>7.50%</td>
+	  </tr>
+	  <tr>
+	    <td>Space required to play</td>
+	    <td>2.50%</td>
+	  </tr>
+	  <tr>
+	    <td>Portability (compactness for travel)</td>
+	    <td>2.50%</td>
+	  </tr>
+	  <tr>
+	    <td>Ability to objectively evaluate victory status</td>
+	    <td>7.50%</td>
+	  </tr>
+	  <tr>
+	    <td>Time / difficulty to master</td>
+	    <td>10.00%</td>
+	  </tr>
+	  <tr>
+	    <td>Low cost</td>
+	    <td>5.00%</td>
+	  </tr>
+	</table>
+
+
+
+</div>
+</div>
+</body>
+
+</html>

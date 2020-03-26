@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>40.014 ESA Project</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+
+<body>
+<div id="container">
+<div class="navbar">
+	<div class="logo"><img class="logo-img" src="../assets/logo.png"/></div>
+	<a class="nav-item" href="../index.html"><div class="nav-item-block">Cover Page</div></a>
+	<a class="nav-item" href="../02 Mission Statement/02_mission_statement.html"><div class="nav-item-block">Mission Statement</div></a>
+	<a class="nav-item" href="../03 User Characteristics/03_user_characteristics.html"><div class="nav-item-block">User Characteristics</div></a>
+	<a class="nav-item" href="../04 Situation Maps/04_influence_diagrams.html"><div class="nav-item-block">Situation Maps</div></a>
+	<a class="nav-item" href="../05 Design Alternatives/05_design_alternatives.html"><div class="nav-item-block">Design Alternatives</div></a>
+	<a class="nav-item" href="../06 Integrated Concepts/06_integrated_concepts.html"><div class="nav-item-block">Integrated Concepts</div></a>
+	<a class="nav-item" href="../07 Scorecard Design/07_scorecard.html"><div class="nav-item-block">Scorecard</div></a>
+	<a class="nav-item" href="../08 Concept Selection/08_concept_selection.html"><div class="nav-item-block">Concept Selection</div></a>
+	<a class="nav-item" href="../09 Operational Concept/09_operational_concept.html"><div class="nav-item-block">Operational Concept</div></a>
+	<a class="nav-item" href="../10 Use Cases and Scenarios/10_use_cases_and_scenarios.html"><div class="nav-item-block">Use Cases and Scenarios</div></a>
+	<a class="nav-item" href="../11 Scenario Analysis/11_scenario_analysis.html"><div class="nav-item-block">Scenario Analysis</div></a>
+	<a class="nav-item" href="../12 Chunked Design/12_chunked_design.html"><div class="nav-item-block">Chunked Design</div></a>
+	<a class="nav-item" href="../13 Logical Architecture/13_logical_architecture.html"><div class="nav-item-block selected"><div class="nav-selected"></div>Logical Architecture</div></a>
+	<a class="nav-item" href="../14 Product Family and Release Schedule/14_product_family_and_release_schedule.html"><div class="nav-item-block">Product Family</div></a>
+	<a class="nav-item" href="../15 Modal Analysis/15_modal_analysis.html"><div class="nav-item-block">Modal Analysis</div></a>
+	<a class="nav-item" href="../16 Prototyping Canvas/16_rapid_prototyping.html"><div class="nav-item-block">Prototyping Canvas</div></a>
+	<a class="nav-item" href="../17 Capella Model/output/index.html"><div class="nav-item-block">Capella Model</div></a>
+	<div class="nav-footer"><p>Refer to the ESA Course Syllabus 2020 for detailed requirements.</p></div>
+</div>
+<div class="body">
+	
+	<h1> Logical Architecture </h1>
+	<div class="description"><p>Reproduce all your diagrams from the Capella Logical Architecture phase here. For each scenario, there should be an Activity Diagram with Swimlanes as well as an Architecture Diagram with functional chains.
+</p></div>
+
+<div id="system_analysis">
+<h2>Activity Diagram with Swim Lanes</h2>
+<p>Please select a use case below to see the Capella model</p>
+	<div class="tab">
+	  <button class="tablinks" onclick="openCity(event, 'LA1')">Parents control argument between students</button>
+	  <button class="tablinks" onclick="openCity(event, 'LA2')">Student forgets the rules of the game</button>
+	  <button class="tablinks" onclick="openCity(event, 'LA3')">Students collaborate to make optimal decisions</button>
+	  <button class="tablinks" onclick="openCity(event, 'LA4')">Students develop efficient solutions to complete game</button>
+	  <button class="tablinks" onclick="openCity(event, 'LA5')">Teacher observes students' improvement through game</button>
+	</div>
+
+	<div id="LA1" class="tabcontent fullwidth scrollwidth">
+		<img class="fullheight" src="../13 Logical Architecture/usecase1.png"/>
+	</div>
+	<div id="LA2" class="tabcontent fullwidth scrollwidth">
+		<img class="fullheight" src="../13 Logical Architecture/usecase2.png"/>
+	</div>
+	<div id="LA3" class="tabcontent fullwidth scrollwidth">
+		<img class="fullheight" src="../13 Logical Architecture/usecase3.png"/>
+	</div>
+	<div id="LA4" class="tabcontent fullwidth scrollwidth">
+		<img class="fullheight" src="../13 Logical Architecture/usecase4.png"/>
+	</div>
+	<div id="LA5" class="tabcontent fullwidth scrollwidth">
+		<img class="fullheight" src="../13 Logical Architecture/usecase5.png"/>
+	</div>
+</div>
+<div class="space"></div>
+
+<div id="system_analysis">
+<h2>Architecture Diagram with Functional Chains</h2>
+<p>Please select a diagram below to see the Capella model</p>
+	<div class="tab">
+	  <button class="tablinks" onclick="openCity(event, 'LA-C0')">Complete Architecture Diagram</button>
+	  <button class="tablinks" onclick="openCity(event, 'LA-C1')">Collaboration Functional Chain</button>
+	  <button class="tablinks" onclick="openCity(event, 'LA-C2')">Entertainment Education Functional Chain</button>
+	  <button class="tablinks" onclick="openCity(event, 'LA-C3')">Game Continuation Chain</button>
+	  <button class="tablinks" onclick="openCity(event, 'LA-C4')">Resolving Argument Functional Chain</button>
+	  <button class="tablinks" onclick="openCity(event, 'LA-C5')">Thinking Skills Functional Chain</button>
+	</div>
+
+	<div id="LA-C0" class="tabcontent fullwidth scrollwidth">
+		<img class="fullheight" src="../13 Logical Architecture/complete_architecture_diagram.png"/>
+	</div>
+	<div id="LA-C1" class="tabcontent fullwidth scrollwidth">
+		<img class="fullheight" src="../13 Logical Architecture/functionchain1.png"/>
+	</div>
+	<div id="LA-C2" class="tabcontent fullwidth scrollwidth">
+		<img class="fullheight" src="../13 Logical Architecture/functionchain2.png"/>
+	</div>
+	<div id="LA-C3" class="tabcontent fullwidth scrollwidth">
+		<img class="fullheight" src="../13 Logical Architecture/functionchain3.png"/>
+	</div>
+	<div id="LA-C4" class="tabcontent fullwidth scrollwidth">
+		<img class="fullheight" src="../13 Logical Architecture/functionchain4.png"/>
+	</div>
+	<div id="LA-C5" class="tabcontent fullwidth scrollwidth">
+		<img class="fullheight" src="../13 Logical Architecture/functionchain5.png"/>
+	</div>
+</div>
+
+</div>
+</div>
+</body>
+
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+
+</html>
