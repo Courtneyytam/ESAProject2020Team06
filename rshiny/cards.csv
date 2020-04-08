@@ -1,0 +1,4 @@
+Action,Effect,Quantity
+Spread virus,Infect,500
+Send masks,Recover,100
+Lockdown region,Infect,200
