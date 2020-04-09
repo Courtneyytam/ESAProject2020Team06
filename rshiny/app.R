@@ -21,7 +21,7 @@ ui <- dashboardPage(skin="black",
       ),
     ),
     selectizeInput(
-      'effect_id', '2. Type of Effect', choices = effect,
+      'effect_id', '2. Type of Effect', choices = effects,
       options = list(
         placeholder = 'select effect',
         onInitialize = I('function() { this.setValue(""); }')
@@ -48,7 +48,7 @@ ui <- dashboardPage(skin="black",
       ),
     ), 
     fluidRow(
-      img(src='placeholder.png',width='1200',style="display: block; margin-left: auto; margin-right: auto;"),
+      img(src='map.png',width='1200',style="display: block; margin-left: auto; margin-right: auto;"),
     )
   )
 )
