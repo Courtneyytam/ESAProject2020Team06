@@ -98,15 +98,23 @@ server <- function(input, output, session) {
           showModal(modalDialog(title =  span("Game Over", style = "font-size: 24px; font-weight: bold; font-family: monospace"), 
                                 renderText({paste("You were able to save ", recovered, " people.")}),
                                 renderText({paste("You allowed ", infected, " people to be infected.")}),
-                                renderText({paste("Your final score is ", funding, ".")}),
+                                renderText({paste("Your final score is ", recovered - infected, ".")}),
                                 style='font-size: 16px; font-weight: bold; font-family: monospace'))
         }
       }
       
     })
   })
+  
   observeEvent(input$start, {active(TRUE)})
-  observeEvent(input$stop, {active(FALSE)})
+  observeEvent(input$stop, {
+    active(FALSE)
+    showModal(modalDialog(title =  span("Game Over", style = "font-size: 24px; font-weight: bold; font-family: monospace"), 
+                renderText({paste("You were able to save ", recovered(), " people.")}),
+                renderText({paste("You allowed ", infected(), " people to be infected.")}),
+                renderText({paste("Your final score is ", max(recovered() - infected(), 0), ".")}),
+                style='font-size: 16px; font-weight: bold; font-family: monospace'))
+  })
 }
 
 shinyApp(ui = ui, server = server)
