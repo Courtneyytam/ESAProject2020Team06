@@ -3,34 +3,26 @@ library(shinydashboard)
 library(lubridate)
 
 cards_data <- read.csv(file="cards.csv")
-actions <- cards_data$Action
-effects <- cards_data$Effect
-quantities <- cards_data$Quantity
+cards <- cards_data$Card
 
 ui <- dashboardPage(skin="black",
-  dashboardHeader(title = span("Input Actions", style = "font-size: 18px; font-weight: bold; font-family: monospace")),
+  dashboardHeader(title = span("Input Card", style = "font-size: 18px; font-weight: bold; font-family: monospace")),
   dashboardSidebar(
     tags$head( 
       tags$style(HTML(".main-sidebar {font-family: monospace}"))
     ),
     selectizeInput(
-      'action_id', '1. Action', choices = actions,
+      'card_desp', '1. Card', choices = cards,
       options = list(
-        placeholder = 'select action',
-        onInitialize = I('function() { this.setValue(""); }')
-      ),
-    ),
-    selectizeInput(
-      'effect_id', '2. Type of Effect', choices = effects,
-      options = list(
-        placeholder = 'select effect',
+        placeholder = 'select card',
         onInitialize = I('function() { this.setValue(""); }')
       )
     ),
+    actionButton('submit', 'Submit'),
     hr(),
     fluidRow(column(4,
         actionButton('start','Start Game'),
-        actionButton('stop','End Game'),
+        actionButton('stop','End Game')
       )
     )
   ),
@@ -38,17 +30,18 @@ ui <- dashboardPage(skin="black",
     fluidRow(
       titlePanel(
         h1("Going Viral", align = "center", style='font-size: 42px; font-weight: bold; font-family: monospace')
-      ),
+      )
     ),
     fluidRow(
       column(12,align="center", style='font-size: 42px; font-weight: bold; font-family: monospace',
-        valueBoxOutput("Infected",),
-        valueBoxOutput("Recovered"),
-        valueBoxOutput("Time"),
-      ),
-    ), 
+        valueBoxOutput("Infected", width=3),
+        valueBoxOutput("Recovered", width=3),
+        valueBoxOutput("Funding", width=3),
+        valueBoxOutput("Time", width=3)
+      )
+    ),
     fluidRow(
-      img(src='map.png',width='1200',style="display: block; margin-left: auto; margin-right: auto;"),
+      img(src='map.png',width='1200',style="display: block; margin-left: auto; margin-right: auto;")
     )
   )
 )
@@ -56,22 +49,43 @@ ui <- dashboardPage(skin="black",
 server <- function(input, output, session) {
   timer <- reactiveVal(7200)
   active <- reactiveVal(FALSE)
-  score <- 0
-  infected <- 0
-  recovered <- 0
   
-  counters_df <- shiny::reactiveValues()
-  counters_df$df <- data.frame("infected" = numeric(), "recovered" = numeric())
-  
+  counter <- shiny::reactiveValues()
+  infected <- reactiveVal(0)
+  recovered <- reactiveVal(0)
+  funding <- reactiveVal(100)
+
+  observeEvent(input$submit, {
+    values <- subset(cards_data, cards_data[,1] == input$card_desp)
+    infected(infected() + values[,2])
+    recovered(recovered() + values[,3])
+    funding(funding() + values[,4])
+    
+    output$Infected <- renderValueBox({
+      valueBox(renderText(infected()),"Total Infected", color = "red")
+    })
+    output$Recovered <- renderValueBox({
+      valueBox(renderText(recovered()), "Total Recovered", color = "green")
+    })
+    output$Funding <- renderValueBox({
+      valueBox(renderText(funding()), "Total Funding", color = "yellow")
+    })
+    output$Time <- renderValueBox({
+      valueBox(renderText({paste(seconds_to_period(timer()))}), "Time Remaining", color = "black")
+    })
+  })
+
   output$Infected <- renderValueBox({
-    valueBox("###000","Total Infected", color = "red")
+    valueBox(renderText(infected()),"Total Infected", color = "red")
   })
   output$Recovered <- renderValueBox({
-    valueBox("###000", "Total Recovered", color = "green")
+    valueBox(renderText(recovered()), "Total Recovered", color = "green")
   })
-  
+  output$Funding <- renderValueBox({
+    valueBox(renderText(funding()), "Total Funding", color = "yellow")
+  })
   output$Time <- renderValueBox({
-    valueBox(renderText({paste(seconds_to_period(timer()))}), "Time Remaining", color = "yellow")
+    valueBox(renderText({paste(seconds_to_period(timer()))}), "Time Remaining", color = "black")
   })
   
   observe({
@@ -84,10 +98,11 @@ server <- function(input, output, session) {
           showModal(modalDialog(title =  span("Game Over", style = "font-size: 24px; font-weight: bold; font-family: monospace"), 
                                 renderText({paste("You were able to save ", recovered, " people.")}),
                                 renderText({paste("You allowed ", infected, " people to be infected.")}),
-                                renderText({paste("Your final score is ", score, ".")}),
-                                style='font-size: 16px; font-weight: bold; font-family: monospace',))
+                                renderText({paste("Your final score is ", funding, ".")}),
+                                style='font-size: 16px; font-weight: bold; font-family: monospace'))
         }
       }
+      
     })
   })
   observeEvent(input$start, {active(TRUE)})
