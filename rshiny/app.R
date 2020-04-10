@@ -50,7 +50,6 @@ server <- function(input, output, session) {
   timer <- reactiveVal(7200)
   active <- reactiveVal(FALSE)
   
-  counter <- shiny::reactiveValues()
   infected <- reactiveVal(0)
   recovered <- reactiveVal(0)
   funding <- reactiveVal(100)
