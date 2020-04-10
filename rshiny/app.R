@@ -60,19 +60,6 @@ server <- function(input, output, session) {
     infected(infected() + values[,2])
     recovered(recovered() + values[,3])
     funding(funding() + values[,4])
-    
-    output$Infected <- renderValueBox({
-      valueBox(renderText(infected()),"Total Infected", color = "red")
-    })
-    output$Recovered <- renderValueBox({
-      valueBox(renderText(recovered()), "Total Recovered", color = "green")
-    })
-    output$Funding <- renderValueBox({
-      valueBox(renderText(funding()), "Total Funding", color = "yellow")
-    })
-    output$Time <- renderValueBox({
-      valueBox(renderText({paste(seconds_to_period(timer()))}), "Time Remaining", color = "black")
-    })
   })
 
   output$Infected <- renderValueBox({
@@ -102,7 +89,6 @@ server <- function(input, output, session) {
                                 style='font-size: 16px; font-weight: bold; font-family: monospace'))
         }
       }
-      
     })
   })
   
