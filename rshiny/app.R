@@ -75,7 +75,7 @@ server <- function(input, output, session) {
   })
   
   observe({
-    invalidateLater(2000000, session)
+    invalidateLater(1000, session)
     isolate({
       if(active()) {
         timer(timer()-1)
