@@ -3,7 +3,7 @@ library(shinydashboard)
 library(lubridate)
 
 cards_data <- read.csv(file="cards.csv")
-cards <- cards_data$Card
+codes <- cards_data$Code
 
 ui <- dashboardPage(skin="black",
   dashboardHeader(title = span("Input Card", style = "font-size: 18px; font-weight: bold; font-family: monospace")),
@@ -12,9 +12,9 @@ ui <- dashboardPage(skin="black",
       tags$style(HTML(".main-sidebar {font-family: monospace}"))
     ),
     selectizeInput(
-      'card_desp', '1. Card', choices = cards,
+      'code_num', '1. Code', choices = codes,
       options = list(
-        placeholder = 'select card',
+        placeholder = 'select code',
         onInitialize = I('function() { this.setValue(""); }')
       )
     ),
@@ -56,10 +56,10 @@ server <- function(input, output, session) {
   funding <- reactiveVal(100)
 
   observeEvent(input$submit, {
-    values <- subset(cards_data, cards_data[,1] == input$card_desp)
-    infected(infected() + (values[,2] * input$num_districts))
-    recovered(recovered() + (values[,3] * input$num_districts))
-    funding(funding() + values[,4])
+    values <- subset(cards_data, cards_data[,1] == input$code_num)
+    infected(infected() + (values[,3] * input$num_districts))
+    recovered(recovered() + (values[,4] * input$num_districts))
+    funding(funding() + values[,5])
   })
 
   output$Infected <- renderValueBox({
@@ -96,9 +96,9 @@ server <- function(input, output, session) {
   observeEvent(input$stop, {
     active(FALSE)
     showModal(modalDialog(title =  span("Game Over", style = "font-size: 24px; font-weight: bold; font-family: monospace"), 
-                renderText({paste("You were able to save ", recovered(), " people.")}),
+                renderText({paste("You were able to save ", min(recovered(), infected()), " people.")}),
                 renderText({paste("You allowed ", infected(), " people to be infected.")}),
-                renderText({paste("Your final score is ", max(5*recovered() - infected(), 0), ".")}),
+                renderText({paste("Your final score is ", 5*(min(recovered(), infected())) + funding(), ".")}),
                 style='font-size: 16px; font-weight: bold; font-family: monospace'))
   })
 }
