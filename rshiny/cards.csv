@@ -1,23 +1,23 @@
 Card,Quantity,,
-Impose restrictive laws to 2 districts of your choice. Each district's recovery count increases by 100.,0,200,-10
+Impose restrictive laws to 2 districts of your choice. Each district's recovery count increases by 100.,0,100,-10
 Issue out a temporary stay home policy any infection effect on non-housing districts will be nultified for the next two turns.,0,0,-40
-"Develop and distribute special vitamin pills to service sectors. Districts 7, 10 and 3 recovery count increases by 100.",0,300,-15
-Provide relief packages for business to encourage work from home. Recovery count in the districts labelled business increases by 100.,0,300,-15
-Conduct an economic intervention to raise funds. Increase funding by 50,0,0,50
-Increase funding in the medical sector to improve distribution of medical services. Each district connected to district 7 recovery count increases by 100,0,500,-25
-Locks down all transportation districts. All direct infection effects on district 4 and district 13 will be nullified for the next 2 turns,0,0,-20
-Development of air-drone transportation to deliver aids to 3 selected districts of your choice to increase recovery count of these districts by 100,0,300,-15
-"Restricts access to all entertainment districts (5, 6, 14). Any infection effect on these districts will be nullified for next two turns",0,0,-10
-"Initiate stay home healthy living campaign to housing districts (2, 8, 11) to improve citizen's health. Housing districts 2, 8 and 11 to increase recovery counnt by 100",0,300,-15
-Set up community donation drive to fund for pandemic relief efforts. Increase funding by 30,0,0,30
-Sets up successful social media campaign that encoruages social distancing in public spaces. Any infection effect that affects entertainment and service districts will be nullified for the next turn,0,0,20
-"A plane carrying infected cases has landed in the city, adding 200 infections to District 13 and 100 infections to all connecting districts.",600,0,0
-"A few infected office workers turned up for work, adding 200 infections to District 9 and 100 infections to all connecting districts.",900,0,0
-"An infected person visited friends at their homes, adding 100 infections to Districts 2, 8 and 11.",300,0,0
-"A train carrying infected cases has stopped at the city's train station, adding 200 infections to District 4 and 100 infections to all connecting districts.",600,0,0
+"Develop and distribute special vitamin pills to service sectors. Districts 7, 10 and 3 recovery count increases by 100.",0,100,-15
+Provide relief packages for business to encourage work from home. Recovery count in the districts labelled business increases by 100.,0,100,-15
+Conduct an economic intervention to raise funds. Increase funding by 50.,0,0,50
+Increase funding in the medical sector to improve distribution of medical services. Each district connected to district 7 recovery count increases by 100.,0,100,-25
+Locks down all transportation districts. All direct infection effects on district 4 and district 13 will be nullified for the next 2 turns.,0,0,-20
+Development of air-drone transportation to deliver aids to 3 selected districts of your choice to increase recovery count of these districts by 100.,0,100,-15
+"Restricts access to all entertainment districts (5, 6, 14). Any infection effect on these districts will be nullified for next two turns.",0,0,-10
+"Initiate stay home healthy living campaign to housing districts (2, 8, 11) to improve citizen's health. Housing districts 2, 8 and 11 to increase recovery counnt by 100.",0,100,-15
+Set up community donation drive to fund for pandemic relief efforts. Increase funding by 30.,0,0,30
+Sets up successful social media campaign that encoruages social distancing in public spaces. Any infection effect that affects entertainment and service districts will be nullified for the next turn.,0,0,-20
+"A plane carrying infected cases has landed in the city, adding 100 infections to District 13 and 100 infections to all connecting districts.",100,0,0
+"A few infected office workers turned up for work, adding 100 infections to District 9 and 100 infections to all connecting districts.",100,0,0
+"An infected person visited friends at their homes, adding 100 infections to Districts 2, 8 and 11.",100,0,0
+"A train carrying infected cases has stopped at the city's train station, adding 100 infections to District 4 and 100 infections to all connecting districts.",100,0,0
 "A few infected students went to school, adding 100 infections to District 10.",100,0,0
-"A few infected people turned up for a gathering, adding 100 to District 3 and all connecting districts.",400,0,0
-"A few infected people went out for leisure activities, adding 100 infections to Districts 5, 6 and 14.",300,0,0
-"An infected person went for meetings at different companies, adding 100 infections to Districts 1, 9 and 12.",300,0,0
-"The city managed to increase donations, adding 50 to the funding.",0,50,0
-"The city received financial aid from other cities, adding 50 to the funding.",0,50,0
+"A few infected people turned up for a gathering, adding 100 to District 3 and all connecting districts.",100,0,0
+"A few infected people went out for leisure activities, adding 100 infections to Districts 5, 6 and 14.",100,0,0
+"An infected person went for meetings at different companies, adding 100 infections to Districts 1, 9 and 12.",100,0,0
+"The city managed to increase donations, adding 50 to the funding.",0,,50
+"The city received financial aid from other cities, adding 50 to the funding.",0,,50

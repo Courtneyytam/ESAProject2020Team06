@@ -18,6 +18,7 @@ ui <- dashboardPage(skin="black",
         onInitialize = I('function() { this.setValue(""); }')
       )
     ),
+    numericInput('num_districts', '2. Number of Districts', value = 1, min = 0, step = 1),
     actionButton('submit', 'Submit'),
     hr(),
     fluidRow(column(4,
@@ -56,8 +57,8 @@ server <- function(input, output, session) {
 
   observeEvent(input$submit, {
     values <- subset(cards_data, cards_data[,1] == input$card_desp)
-    infected(infected() + values[,2])
-    recovered(recovered() + values[,3])
+    infected(infected() + (values[,2] * input$num_districts))
+    recovered(recovered() + (values[,3] * input$num_districts))
     funding(funding() + values[,4])
   })
 
@@ -97,7 +98,7 @@ server <- function(input, output, session) {
     showModal(modalDialog(title =  span("Game Over", style = "font-size: 24px; font-weight: bold; font-family: monospace"), 
                 renderText({paste("You were able to save ", recovered(), " people.")}),
                 renderText({paste("You allowed ", infected(), " people to be infected.")}),
-                renderText({paste("Your final score is ", max(recovered() - infected(), 0), ".")}),
+                renderText({paste("Your final score is ", max(5*recovered() - infected(), 0), ".")}),
                 style='font-size: 16px; font-weight: bold; font-family: monospace'))
   })
 }
