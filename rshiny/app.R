@@ -48,7 +48,7 @@ ui <- dashboardPage(skin="black",
 )
 
 server <- function(input, output, session) {
-  timer <- reactiveVal(7200)
+  timer <- reactiveVal(3600)
   active <- reactiveVal(FALSE)
   
   infected <- reactiveVal(0)
