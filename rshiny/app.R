@@ -53,7 +53,7 @@ server <- function(input, output, session) {
   
   infected <- reactiveVal(0)
   recovered <- reactiveVal(0)
-  funding <- reactiveVal(100)
+  funding <- reactiveVal(0)
 
   observeEvent(input$submit, {
     values <- subset(cards_data, cards_data[,1] == input$code_num)
@@ -98,7 +98,7 @@ server <- function(input, output, session) {
     showModal(modalDialog(title =  span("Game Over", style = "font-size: 24px; font-weight: bold; font-family: monospace"), 
                 renderText({paste("You were able to save ", min(recovered(), infected()), " people.")}),
                 renderText({paste("You allowed ", infected(), " people to be infected.")}),
-                renderText({paste("Your final score is ", 5*(min(recovered(), infected())) + funding(), ".")}),
+                renderText({paste("Your final score is ", max(0, 2*recovered() - infected()) + funding(), ".")}),
                 style='font-size: 16px; font-weight: bold; font-family: monospace'))
   })
 }
