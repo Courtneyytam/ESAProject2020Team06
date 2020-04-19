@@ -82,10 +82,10 @@ server <- function(input, output, session) {
         timer(timer()-1)
         if(timer()<1) {
           active(FALSE)
-          showModal(modalDialog(title =  span("Game Over", style = "font-size: 24px; font-weight: bold; font-family: monospace"), 
-                                renderText({paste("You were able to save ", recovered, " people.")}),
-                                renderText({paste("You allowed ", infected, " people to be infected.")}),
-                                renderText({paste("Your final score is ", recovered - infected, ".")}),
+          showModal(modalDialog(title = span("Game Over", style = "font-size: 24px; font-weight: bold; font-family: monospace"), 
+                                renderText({paste("You were able to save ", min(recovered(), infected()), " people.")}),
+                                renderText({paste("You allowed ", infected(), " people to be infected.")}),
+                                renderText({paste("Your final score is ", max(0, 2*recovered() - infected()) + funding(), ".")}),
                                 style='font-size: 16px; font-weight: bold; font-family: monospace'))
         }
       }
